@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prison</title>
+    <link href="css/style02.css" rel="stylesheet">
+    <script src="js/script14.js" defer></script>
+</head>
+
+<body>
+    <div class="header">
+        <button id="dark-mode-toggle">Mode Clair</button>
+        <button id="music-toggle">🔈 Activer la musique</button>
+        <div id="music-selector" class="music-selector"></div>
+        <div id="clock">00:00:00</div>
+        <div id="date">jj/mm/aaaa</div>
+    </div>
+    <audio id="backgroundMusic" src="./audio/Prison_cell_02.mp3" loop preload="auto"></audio>
+
+    <div class="container fade-in">
+        <h1>Gai guet</h1>
+
+        <div class="timer">
+            <span id="time-remaining">60:00</span>
+            <div class="progress-container">
+                <div id="progress-bar" class="progress-bar"></div>
+            </div>
+        </div>
+        <div class="audio-container fade-in fade-in-delay-1">
+            <div class="audio-section">
+                <h3>Instructions</h3>
+                <p>Entre 17 h 30 et 19 h 30, les détenus sont autorisés à faire de la musique ou à jouer aux cartes. Les
+                    occupants des cellules 180 à 183 profitent du bruit pour agrandir le trou de leur bouche
+                    d'aéra-tion, tout en faisant le guet à l'aide d'un miroir. Les trois autres ont renoncé à
+                    s'échapper, car ils ont constaté que leur grille ne débouchait pas dans le même couloir.
+                </p>
+            </div>
+
+            <div class="audio-section">
+                <h3>Objectif</h3>
+                <p>Choisir un instrument de musique et en comprendre l'utilité.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container fade-in fade-in-delay-2">
+        <div class="image-container">
+            <img id="prisonerImage" src="./images/indice.jpg" alt="Indices" onclick="zoomImage(this)">
+        </div>
+
+        <button class="btn btn-secondary" id="hintButton">Afficher un indice</button>
+    </div>
+
+    <div class="chemin">
+        <div class="image-chemin">
+            <img src="./images/etape14.jpg" alt="Frank Morris">
+            <p>
+                GEÔLE
+                PENITENCIER
+                VIOLON
+                CACHOT
+                CABANE
+                BALLON
+                BAGNE
+                TAULE</p>
+            <p>
+                • ON est évadé
+                • ON est évadés ?
+                • ON est prêt
+                • ON est prêts!
+                • ON est décapité
+                • ON est décapités?
+                • ON est pendu
+                • ON est pendus ?</p>
+            <p>
+                « Ça me gonfle », qu'on ne puisse pas s'échapper ;
+                ça me prend la tête, cette prison ! s'énerve Fuji Tif, aussi avide de liberté que son nom l'indique.
+                - On doit être là pour nos potes, dit Dave.
+                Tony m'aide en grammaire.
+                Il m'a demandé de lui filer mon instrument, la veille de l'évasion; je vais lui rendre ce service, mais
+                je ne sais pas ce qu'il veut en faire... »</p>
+        </div>
+
+        <div class="container fade-in fade-in-delay-3">
+            <h2>Faites votre choix</h2>
+
+            <div class="choices-container">
+                <div class="choice-box">
+                    <h3>Liste de mots #1</h3>
+                    <ul class="prisoner-list">
+                        <li>ÔLE</li>
+                    </ul>
+                    <button class="btn" onclick="makeChoice('echec.html')">Choisir cette liste</button>
+                </div>
+
+                <div class="choice-box">
+                    <h3>Liste de mots #2</h3>
+                    <ul class="prisoner-list">
+                        <li>1.l'accordéon</li>
+                    </ul>
+                    <button class="btn" onclick="makeChoice('etape15.html')">Choisir cette liste</button>
+                </div>
+                <div class="choices-container">
+                    <div class="choice-box">
+                        <h3>Liste de mots #3</h3>
+                        <ul class="prisoner-list">
+                            <li>la corde et on</li>
+                        </ul>
+                        <button class="btn" onclick="makeChoice('echec.html')">Choisir cette liste</button>
+                    </div>
+                    <div class="choices-container">
+                        <div class="choice-box">
+                            <h3>Liste de mots #4</h3>
+                            <ul class="prisoner-list">
+                              <li>l'accord des on</li>
+                            </ul>
+                            <button class="btn" onclick="makeChoice('echec.html')">Choisir cette liste</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="hintModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <h2>Indice</h2>
+                        <p id="hintText">Le vocabulaire choisie notamment « Ça me gonfle » et « ça me prend la tête » ne
+                            sont
+                            pas la par hasard.
+                        </p>
+                    </div>
+                </div>
+                <div id="imageModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <img id="enlargedImage" src="" alt="Image agrandie">
+                    </div>
+                </div>
+</body>
+
+</html>

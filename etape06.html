@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prison - Étape 06</title>
+    <link href="css/style04.css" rel="stylesheet">
+    <script src="js/script06.js" defer></script>
+</head>
+
+<body>
+    <div class="header">
+        <button id="dark-mode-toggle">Mode Clair</button>
+        <button id="music-toggle">🔈 Activer la musique</button>
+        <div id="music-selector" class="music-selector"></div>
+        <div id="clock">00:00:00</div>
+        <div id="date">jj/mm/aaaa</div>
+    </div>
+
+    <audio id="ambientSound" src="./audio/ambient_cell.mp3" preload="auto"></audio>
+    <audio id="backgroundMusic" src="./audio/Prison_cell_02.mp3" loop preload="auto"></audio>
+
+    <div class="container fade-in">
+        <h1>La cible, faire un carton</h1>
+
+        <div class="timer">
+            <span id="time-remaining">60:00</span>
+            <div class="progress-container">
+                <div id="progress-bar" class="progress-bar"></div>
+            </div>
+        </div>
+
+        <div class="audio-container fade-in fade-in-delay-1">
+            <div class="audio-section">
+                <h3>Instructions</h3>
+                <p>À l'atelier de la prison, les prisonniers confectionnent notamment des emballages en carton « recyclé ». 
+                   Théo sera chargé de détourner de petites quantités de colle et les autres devront récupérer des chutes 
+                   de carton de différentes formes. Bien agencées, elles constitueront un carré de la hauteur exacte 
+                   de la grille d'aération.
+                </p>
+            </div>
+
+            <div class="audio-section">
+                <h3>Objectif</h3>
+                <p>Reconstituer le puzzle de la grille.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container fade-in fade-in-delay-2">
+        <div class="puzzle-container">
+            <div class="puzzle-board" id="puzzleBoard"></div>
+        </div>
+
+        <div id="successMessage" style="display: none; text-align: center; color: #2ecc71; margin-top: 15px;">
+            <h3>🎉 Puzzle résolu avec succès! 🎉</h3>
+        </div>
+
+        <div style="text-align: center; margin-top: 20px;">
+            <button class="btn btn-secondary" id="hintButton">Afficher un indice</button>
+            <button class="btn" id="resetBtn">Réinitialiser</button>
+        </div>
+    </div>
+
+    <div class="container fade-in fade-in-delay-3">
+        <h2>Passer à la suite</h2>
+        <div class="choices-container" style="justify-content: center;">
+            <div class="choice-box">
+                <h3>Validation</h3>
+                <p>Une fois le puzzle terminé, vous pourrez accéder à la cellule suivante.</p>
+                <button class="btn" id="nextBtn" onclick="window.location.href='etape07.html'" disabled>Étape suivante</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="hintModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Indice</h2>
+            <p id="hintText">Observez bien la continuité des lignes et la position des points dans les angles.</p>
+        </div>
+    </div>
+
+</body>
+</html>
